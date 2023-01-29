@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.espressif.esptouch.android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".esp.EspTouchApp"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@drawable/concent"
+        android:label="Energy Saver"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.espressif.esptouch.android.esp.EspTouchActivity"
+            android:exported="true"
+            android:label="@string/esptouch1_title"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".MainActivity">
+        </activity>
+
+        <activity
+            android:name=".MainActivity3">
+        </activity>
+
+        <activity
+            android:name=".ScannerActivity">
+        </activity>
+
+        <activity
+            android:name=".AlarmView"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".TimerView"
+            android:exported="true">
+        </activity>
+
+
+        <activity
+            android:name=".TimerSetting"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".AlarmSetting"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".AnalysisView"
+            android:exported="true">
+        </activity>
+
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode"/>
+
+    </application>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+</manifest>
